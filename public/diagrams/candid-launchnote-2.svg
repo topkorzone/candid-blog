@@ -1,0 +1,17 @@
+<svg width="640" height="150" viewBox="0 0 640 150" role="img"
+     aria-label="시간축을 따라 이어지는 업무 카드 흐름 위에서, 며칠째 진전 없는 항목 하나가 정체로 조용히 표시되는 도식. 이 정체 감지는 통제된 환경에서 다졌고 실 데이터로는 더 검증해 가는 중입니다."
+     xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="640" height="150" fill="#DCE8EC" rx="12"/>
+  <!-- 시간축 -->
+  <line x1="40" y1="100" x2="600" y2="100" stroke="#8A93A0" stroke-width="1.5"/>
+  <!-- 진행 항목들(sage/blue) -->
+  <circle cx="110" cy="100" r="8" fill="#4E8A6B"/>
+  <circle cx="240" cy="100" r="8" fill="#3E7CA8"/>
+  <circle cx="500" cy="100" r="8" fill="#3E7CA8"/>
+  <!-- 정체 항목: muted amber + 라벨(3중 병기) -->
+  <circle cx="370" cy="100" r="10" fill="#B0803A"/>
+  <rect x="322" y="46" width="96" height="30" rx="8" fill="#FFFFFF" stroke="#B0803A" stroke-width="1.5"/>
+  <circle cx="338" cy="61" r="4" fill="#B0803A"/>
+  <text x="350" y="65" fill="#7A5A28" font-size="12">정체 · Stalled</text>
+  <line x1="370" y1="90" x2="370" y2="76" stroke="#B0803A" stroke-width="1" stroke-dasharray="2 4"/>
+</svg>

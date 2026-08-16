@@ -1,0 +1,20 @@
+<svg width="640" height="170" viewBox="0 0 640 170" role="img"
+     aria-label="우리 채점을 그대로 믿지 않고 독립 모델로 교차 확인한 결과를 동일 위계로 나란히 표시. 독립 모델 status 83.3%, 자기채점 편향 약 10점. 애매하면 확인 큐로."
+     xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="640" height="170" fill="#DCE8EC" rx="12"/>
+  <!-- 두 값 동일 위계 병기(같은 폰트크기·같은 굵기) -->
+  <g text-anchor="middle">
+    <rect x="60"  y="40" width="230" height="90" rx="10" fill="#FFFFFF" stroke="#2E6B7E" stroke-width="1.5"/>
+    <text x="175" y="72" fill="#12303A" font-size="20" font-weight="600">83.3%</text>
+    <text x="175" y="98" fill="#6B7680" font-size="12">독립 모델 · status 일치</text>
+
+    <rect x="350" y="40" width="230" height="90" rx="10" fill="#FFFFFF" stroke="#6E6A86" stroke-width="1.5"/>
+    <text x="465" y="72" fill="#12303A" font-size="20" font-weight="600">≈10점</text>
+    <text x="465" y="98" fill="#6B7680" font-size="12">자기채점 편향(함께 밝힘)</text>
+  </g>
+  <!-- 확인 큐 배지(필러3 색 #6E6A86, 색+아이콘◇+라벨 3중) -->
+  <g>
+    <rect x="245" y="140" width="150" height="24" rx="12" fill="#6E6A86"/>
+    <text x="320" y="157" fill="#FFFFFF" font-size="12" text-anchor="middle">◇ 애매하면 확인 큐로</text>
+  </g>
+</svg>
