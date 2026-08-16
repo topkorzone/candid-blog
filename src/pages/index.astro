@@ -6,43 +6,49 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.hero { padding: 12px 0 8px; }
+			.hero h1 { font-size: 2.4em; line-height: 1.25; margin: 0 0 0.3em; }
+			.lead { font-size: 1.15em; color: rgb(var(--gray-dark)); }
+			.cue { display: inline-block; font-size: 0.85em; color: rgb(var(--gray));
+				border: 1px solid rgb(var(--gray-light)); border-radius: 40px; padding: 4px 12px; margin-top: 6px; }
+			.cta { margin: 24px 0 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+			.cta a { text-decoration: none; border: 1px solid rgb(var(--gray-light));
+				border-radius: 8px; padding: 10px 18px; }
+			.cta a.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+			.note { color: rgb(var(--gray)); font-size: 0.95em; }
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+			<section class="hero">
+				<h1>묻지 않아도, 보입니다.</h1>
+				<p class="lead">
+					단체방 대화를 읽어 <strong>누가·무슨 일을·어디까지</strong> 됐는지를,
+					묻지 않아도 화면에 떠올리는 업무 가시성 레이어입니다.
+				</p>
+				<p><span class="cue">● 수집은 로컬 추론 기반 · 베타</span></p>
+			</section>
+
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
+				업무는 이미 단체방에서 흘러가는데, 상태는 아무도 입력하지 않습니다. Candid는 그 대화를 읽어
+				업무·담당자·상태를 스스로 추론하고, 며칠째 멈춘 일은 알아채기 전에 먼저 떠올립니다
+				<span class="note">(이 정체 감지는 통제된 환경에서 다졌고 실 데이터로는 더 검증해 가는 중입니다).</span>
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
+			<p class="note">
+				아직 시작 단계입니다. "이미 시장이 검증했다"고 말하지 않겠습니다 — 이건 우리가 세우려는
+				방향이고, 지금은 대기자·파일럿으로 함께 확인해 갑니다. 실시간·이벤트 푸시 발송은 아직 만들지 않았습니다.
 			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+
+			<div class="cta">
+				<a class="primary" href="/blog/">런치노트 읽기 →</a>
+				<a href="/blog/">대기자·파일럿 문의</a>
+			</div>
+			<p class="note">※ 대기자 등록 폼은 곧 연결됩니다.</p>
 		</main>
 		<Footer />
 	</body>
