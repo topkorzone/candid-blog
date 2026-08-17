@@ -31,6 +31,19 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				border: 1px solid rgb(var(--gray-light));
 				box-shadow: 0 8px 30px rgba(18, 48, 58, 0.08);
 			}
+			.hero-link { display: block; cursor: zoom-in; }
+			.zoom-hint { color: var(--accent); font-weight: 600; }
+			.lightbox {
+				display: none; position: fixed; inset: 0; z-index: 1000;
+				background: rgba(10, 20, 25, 0.9);
+				align-items: center; justify-content: center;
+				padding: 2vh 2vw; cursor: zoom-out;
+			}
+			.lightbox:target { display: flex; }
+			.lightbox img {
+				max-width: 98vw; max-height: 96vh;
+				border-radius: 8px; box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+			}
 			.waitlist { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgb(var(--gray-light)); }
 			.waitlist h2 { font-size: 1.4em; margin: 0 0 6px; }
 			.wl-form { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 8px; }
@@ -57,14 +70,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<p><span class="cue">● 수집은 로컬 추론 기반 · 베타</span></p>
 			</section>
 
-			<img
-				class="hero-visual"
-				src="/chat-to-board.png"
-				alt="왼쪽 슬랙 단체방 업무 대화가 오른쪽 Candid 업무 보드판(진행중·검토중·정체·완료)으로 자동 정리되는 예시 (데모 데이터)"
-			/>
+			<a href="#zoom" class="hero-link" aria-label="이미지 크게 보기">
+				<img
+					class="hero-visual"
+					src="/chat-to-board.png"
+					alt="왼쪽 슬랙 단체방 업무 대화가 오른쪽 Candid 업무 보드판(진행중·검토중·정체·완료)으로 자동 정리되는 예시 (데모 데이터)"
+				/>
+			</a>
 			<p class="note small" style="text-align:center; margin-top:6px;">
-				단체방 대화가 → <strong>업무 보드판으로</strong>. 진행중·정체·완료가 저절로 (예시 · 데모 데이터).
+				단체방 대화가 → <strong>업무 보드판으로</strong>. 진행중·정체·완료가 저절로 (예시 · 데모 데이터)
+				<span class="zoom-hint">· 🔍 클릭하면 크게</span>
 			</p>
+
+			<a href="#" id="zoom" class="lightbox" aria-label="닫기">
+				<img src="/chat-to-board.png" alt="Candid — 단체방 대화가 업무 보드판으로 바뀌는 예시 (확대, 데모 데이터)" />
+			</a>
 
 			<p>
 				업무는 이미 단체방에서 흘러가는데, 상태는 아무도 입력하지 않습니다. Candid는 그 대화를 읽어
