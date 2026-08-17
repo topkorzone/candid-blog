@@ -4,18 +4,62 @@
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
 import FallbackImage from '../assets/blog-placeholder-1.jpg';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { Font } from 'astro:assets';
 
 interface Props {
 	title: string;
 	description: string;
 	image?: ImageMetadata;
+	/** 공개(public) 폴더의 이미지 경로(예: "/chat-to-board.png"). 지정 시 image보다 우선. */
+	imagePath?: string;
+	/** 블로그 글이면 "article", 그 외 "website". JSON-LD 타입 결정에도 사용. */
+	type?: 'website' | 'article';
+	pubDate?: Date;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = FallbackImage } = Astro.props;
+const {
+	title,
+	description,
+	image = FallbackImage,
+	imagePath,
+	type = 'website',
+	pubDate,
+} = Astro.props;
+
+// OG 이미지 절대 URL — public 경로(imagePath)가 있으면 그것을, 없으면 임포트 이미지를 사용
+const ogImageURL = imagePath
+	? new URL(imagePath, Astro.site)
+	: new URL(image.src, Astro.site);
+
+// 구조화 데이터(JSON-LD) — 검색엔진이 사이트·글을 구조적으로 이해하도록
+const jsonLd =
+	type === 'article'
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'BlogPosting',
+				headline: title,
+				description,
+				image: ogImageURL.toString(),
+				url: canonicalURL.toString(),
+				datePublished: pubDate ? pubDate.toISOString() : undefined,
+				inLanguage: 'ko-KR',
+				publisher: {
+					'@type': 'Organization',
+					name: 'Candid',
+					url: Astro.site?.toString(),
+				},
+			}
+		: {
+				'@context': 'https://schema.org',
+				'@type': 'WebSite',
+				name: SITE_TITLE,
+				description: SITE_DESCRIPTION,
+				url: Astro.site?.toString(),
+				inLanguage: 'ko-KR',
+			};
 ---
 
 <!-- Global Metadata -->
@@ -39,14 +83,24 @@ const { title, description, image = FallbackImage } = Astro.props;
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
+<meta name="title" content={title} />
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
+<!-- Open Graph / Facebook / KakaoTalk -->
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content="Candid" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
+<meta property="og:image" content={ogImageURL} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageURL} />
+
+<!-- 구조화 데이터 (JSON-LD) -->
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
