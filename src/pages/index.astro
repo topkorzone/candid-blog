@@ -22,8 +22,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			.note { color: rgb(var(--gray)); font-size: 0.95em; }
 			.note.small { font-size: 0.82em; }
 			.hero-visual {
-				width: 100%; display: block; margin: 24px 0 4px;
-				border-radius: 12px; border: 1px solid rgb(var(--gray-light));
+				display: block;
+				width: 96vw;
+				max-width: 1180px;
+				margin: 24px 0 4px 50%;
+				transform: translateX(-50%);
+				border-radius: 12px;
+				border: 1px solid rgb(var(--gray-light));
+				box-shadow: 0 8px 30px rgba(18, 48, 58, 0.08);
 			}
 			.waitlist { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgb(var(--gray-light)); }
 			.waitlist h2 { font-size: 1.4em; margin: 0 0 6px; }
