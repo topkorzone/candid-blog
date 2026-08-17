@@ -21,6 +21,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			.cta a.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
 			.note { color: rgb(var(--gray)); font-size: 0.95em; }
 			.note.small { font-size: 0.82em; }
+			.hero-visual {
+				width: 100%; display: block; margin: 24px 0 4px;
+				border-radius: 12px; border: 1px solid rgb(var(--gray-light));
+			}
 			.waitlist { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgb(var(--gray-light)); }
 			.waitlist h2 { font-size: 1.4em; margin: 0 0 6px; }
 			.wl-form { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 8px; }
@@ -46,6 +50,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				</p>
 				<p><span class="cue">● 수집은 로컬 추론 기반 · 베타</span></p>
 			</section>
+
+			<img
+				class="hero-visual"
+				src="/diagrams/candid-launchnote-1.svg"
+				alt="흩어진 단체방 대화 조각이 아래에서 위로 조용히 떠올라 '디자인 시안 · 담당 J · 진행중' 같은 업무 현황 카드로 또렷해지는 도식"
+			/>
+			<p class="note small" style="text-align:center; margin-top:6px;">
+				흩어진 대화가 → 업무 현황으로 <strong>조용히 떠오릅니다</strong> (예시 화면).
+			</p>
 
 			<p>
 				업무는 이미 단체방에서 흘러가는데, 상태는 아무도 입력하지 않습니다. Candid는 그 대화를 읽어

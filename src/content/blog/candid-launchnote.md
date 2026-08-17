@@ -2,6 +2,7 @@
 title: '묻지 않아도 보이는 업무 현황 — Candid를 소개합니다'
 description: '단체방 대화를 읽어 "누가·무슨 일을·어디까지"를 묻지 않아도 화면에 떠올리는 업무 가시성 레이어, Candid. (수집은 로컬 추론 기반 · 베타) 지금은 대기자·파일럿으로 함께 확인해 갑니다.'
 pubDate: 'Aug 16 2026'
+heroImage: '../../assets/hero-launchnote.png'
 ---
 
 ### 💬 도입 — 웨지 문제 제기
