@@ -10,6 +10,9 @@ import { defineConfig, fontProviders } from 'astro/config';
 export default defineConfig({
 	site: 'https://candid-blog.vercel.app',
 	adapter: vercel(),
+	// Meta(Threads) 콜백은 교차 출처 POST → Astro 기본 CSRF(checkOrigin) 해제.
+	// 이 사이트엔 상태 변경 폼이 없어 안전.
+	security: { checkOrigin: false },
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{
