@@ -64,17 +64,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			<section class="hero">
 				<h1>묻지 않아도, 보입니다.</h1>
 				<p class="lead">
-					단체방 대화를 읽어 <strong>누가·무슨 일을·어디까지</strong> 됐는지를,
-					묻지 않아도 화면에 떠올리는 업무 가시성 레이어입니다.
+					슬랙·카카오톡 단체방 대화를 읽어 <strong>할 일·담당자·마감·진행</strong>을
+					자동으로 정리해, 한 화면(현황판)으로 보여주는 팀 업무 관리 도구입니다.
 				</p>
-				<p><span class="cue">● 수집은 로컬 추론 기반 · 베타</span></p>
+				<p><span class="cue">● 슬랙·카톡 대화 → 팀 업무 현황판</span></p>
 			</section>
 
 			<a href="#zoom" class="hero-link" aria-label="이미지 크게 보기">
 				<img
 					class="hero-visual"
 					src="/chat-to-board.png"
-					alt="왼쪽 슬랙 단체방 업무 대화가 오른쪽 Candid 업무 보드판(진행중·검토중·정체·완료)으로 자동 정리되는 예시 (데모 데이터)"
+					alt="왼쪽 슬랙 단체방 업무 대화가 오른쪽 Sonari 업무 현황판(진행중·검토중·정체·완료)으로 자동 정리되는 예시 (데모 데이터)"
 				/>
 			</a>
 			<p class="note small" style="text-align:center; margin-top:6px;">
@@ -83,17 +83,19 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			</p>
 
 			<a href="#" id="zoom" class="lightbox" aria-label="닫기">
-				<img src="/chat-to-board.png" alt="Candid — 단체방 대화가 업무 보드판으로 바뀌는 예시 (확대, 데모 데이터)" />
+				<img src="/chat-to-board.png" alt="Sonari — 단체방 대화가 업무 현황판으로 바뀌는 예시 (확대, 데모 데이터)" />
 			</a>
 
 			<p>
-				업무는 이미 단체방에서 흘러가는데, 상태는 아무도 입력하지 않습니다. Candid는 그 대화를 읽어
-				업무·담당자·상태를 스스로 추론하고, 며칠째 멈춘 일은 알아채기 전에 먼저 떠올립니다
+				업무는 이미 단체방에서 흘러가는데, 상태는 아무도 입력하지 않습니다. Sonari는 그 대화를 읽어
+				할 일·담당자·마감·진행을 스스로 정리하고, 며칠째 멈춘 일과 마감이 임박한 일은 알아채기 전에
+				먼저 떠올립니다. 한 주의 진행은 주간 리포트로도 요약해 드립니다
 				<span class="note">(이 정체 감지는 통제된 환경에서 다졌고 실 데이터로는 더 검증해 가는 중입니다).</span>
 			</p>
 			<p class="note">
 				아직 시작 단계입니다. "이미 시장이 검증했다"고 말하지 않겠습니다 — 이건 우리가 세우려는
-				방향이고, 지금은 대기자·파일럿으로 함께 확인해 갑니다. 실시간·이벤트 푸시 발송은 아직 만들지 않았습니다.
+				방향이고, 지금은 대기자·파일럿으로 함께 확인해 갑니다. 실시간으로 알림을 쏘아 보내는 제품이
+				아니라, 무엇을 어떻게 알릴지 정한 뒤 화면·대시보드에 조용히 보여줍니다.
 			</p>
 
 			<div class="cta">
@@ -102,10 +104,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 			<section class="waitlist" id="waitlist">
 				<h2>대기자 등록</h2>
-				<p class="note">Candid가 준비되면 가장 먼저 알려드릴게요. 파일럿에도 함께 하실 수 있습니다.</p>
+				<p class="note">Sonari가 준비되면 가장 먼저 알려드릴게요. 파일럿에도 함께 하실 수 있습니다.</p>
 				<form class="wl-form" action="https://formspree.io/f/xvkpbejr" method="POST">
 					<input type="email" name="email" required placeholder="이메일 주소" aria-label="이메일 주소" />
-					<input type="hidden" name="_subject" value="Candid 대기자 등록" />
+					<input type="hidden" name="_subject" value="Sonari 대기자 등록" />
 					<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
 					<button type="submit">등록</button>
 				</form>
