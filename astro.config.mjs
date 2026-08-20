@@ -8,7 +8,7 @@ import { defineConfig, fontProviders } from 'astro/config';
 // https://astro.build/config
 // 페이지는 기본 정적(프리렌더). Threads OAuth 콜백만 per-route로 서버 렌더(prerender=false).
 export default defineConfig({
-	site: 'https://candid-blog.vercel.app',
+	site: 'https://sonari-blog.vercel.app',
 	adapter: vercel(),
 	// Meta(Threads) 콜백은 교차 출처 POST → Astro 기본 CSRF(checkOrigin) 해제.
 	// 이 사이트엔 상태 변경 폼이 없어 안전.
