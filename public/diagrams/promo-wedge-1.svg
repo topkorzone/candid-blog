@@ -1,0 +1,33 @@
+<svg width="640" height="220" viewBox="0 0 640 220" role="img"
+     aria-label="단체방 대화 말풍선들이 아래에서 위로 조용히 떠올라 업무·담당자·상태 현황판 카드로 정리되는 흐름. 쏘는 화살표·벨·느낌표 없이 잔잔한 부상."
+     xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, -apple-system, 'Segoe UI', sans-serif">
+  <rect x="0" y="0" width="640" height="220" fill="#DCE8EC" rx="12"/>
+  <!-- 아래: 단체방 대화 말풍선(저채도·흐릿) -->
+  <g fill="#8A93A0" opacity="0.55">
+    <rect x="40"  y="168" width="120" height="26" rx="13"/>
+    <rect x="180" y="176" width="86"  height="22" rx="11"/>
+    <rect x="292" y="168" width="132" height="26" rx="13"/>
+    <rect x="452" y="174" width="100" height="24" rx="12"/>
+  </g>
+  <text x="40" y="150" fill="#8A93A0" font-size="12">단체방 대화 — 업무가 시작되고 흘러가는 곳</text>
+  <!-- 위: 현황판 카드(잔잔히 부상·실제 대화에 있던 일만) -->
+  <g>
+    <rect x="70" y="36" width="220" height="66" rx="10" fill="#FFFFFF" stroke="#2E6B7E" stroke-width="1.5"/>
+    <circle cx="94" cy="60" r="5" fill="#3E7CA8"/>
+    <text x="108" y="64" fill="#12303A" font-size="14">배포 점검 · 담당 K</text>
+    <text x="108" y="86" fill="#6B7680" font-size="12">status: 진행중</text>
+    <text x="280" y="52" fill="#8A93A0" font-size="10" text-anchor="end">예시·데모 데이터</text>
+
+    <rect x="350" y="36" width="220" height="66" rx="10" fill="#FFFFFF" stroke="#2E6B7E" stroke-width="1.5"/>
+    <circle cx="374" cy="60" r="5" fill="#B0803A"/>
+    <text x="388" y="64" fill="#12303A" font-size="14">약관 검토 · 담당 J</text>
+    <text x="388" y="86" fill="#6B7680" font-size="12">status: 정체</text>
+    <text x="560" y="52" fill="#8A93A0" font-size="10" text-anchor="end">예시·데모 데이터</text>
+  </g>
+  <text x="70" y="122" fill="#4A6169" font-size="13">묻지 않아도, 입력하지 않아도 — 대화가 곧 현황</text>
+  <!-- 부상 표현: 화살표 아닌, 위로 옅어지는 잔잔한 점선(떠오름=surface, 쏨=push 아님) -->
+  <g stroke="#2E6B7E" stroke-width="1" stroke-dasharray="2 6" opacity="0.4">
+    <line x1="180" y1="168" x2="180" y2="104"/>
+    <line x1="470" y1="168" x2="470" y2="104"/>
+  </g>
+</svg>
